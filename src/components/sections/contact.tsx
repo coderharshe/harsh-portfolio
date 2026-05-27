@@ -269,7 +269,7 @@ export default function Contact() {
                   id="budgetRange"
                   name="budgetRange"
                   min="10000"
-                  max="1000000"
+                  max="500000"
                   step="5000"
                   value={formData.budgetRange}
                   onChange={handleChange}
@@ -277,8 +277,8 @@ export default function Contact() {
                 />
                 <div className="flex justify-between w-full text-[8px] font-mono text-[#64748B] mt-1.5 select-none">
                   <span>₹10,000</span>
-                  <span>₹5,00,000</span>
-                  <span>₹10,00,000+</span>
+                  <span>₹2,50,000</span>
+                  <span>₹5,00,000+</span>
                 </div>
               </div>
 
