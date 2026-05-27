@@ -72,7 +72,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="relative py-28 overflow-hidden select-none">
+    <section id="about" className="relative py-28 overflow-hidden">
       {/* Alternating dark BG */}
       <div className="absolute inset-0 bg-[#0A1020]" />
       <div className="absolute inset-0 bg-dot-pattern opacity-40 pointer-events-none" />

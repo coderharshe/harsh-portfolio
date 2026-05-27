@@ -112,7 +112,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-primary-bg overflow-hidden select-none">
+    <section id="contact" className="relative py-24 bg-primary-bg overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-dot-pattern opacity-5 pointer-events-none" />
       <div className="absolute w-[500px] h-[500px] rounded-full glow-blur-blue opacity-10 top-1/4 right-0 pointer-events-none animate-pulse-slow" />

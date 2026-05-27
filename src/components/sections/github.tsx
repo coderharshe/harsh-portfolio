@@ -122,7 +122,7 @@ export default function GitHubSection() {
   });
 
   return (
-    <section id="github-activity" className="relative py-24 bg-primary-bg overflow-hidden select-none">
+    <section id="github-activity" className="relative py-24 bg-primary-bg overflow-hidden">
       {/* Background Decorative Mesh */}
       <div className="absolute w-[400px] h-[400px] rounded-full glow-blur-purple opacity-5 bottom-0 left-10 pointer-events-none" />
 

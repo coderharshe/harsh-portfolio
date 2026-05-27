@@ -74,7 +74,7 @@ export default function Skills() {
     activeTab === 'all' ? skillsList : skillsList.filter((s) => s.category === activeTab);
 
   return (
-    <section id="skills" className="relative py-28 overflow-hidden select-none">
+    <section id="skills" className="relative py-28 overflow-hidden">
       {/* Primary Background */}
       <div className="absolute inset-0 bg-primary-bg" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />

@@ -26,7 +26,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="relative py-24 bg-primary-bg overflow-hidden select-none">
+    <section id="projects" className="relative py-24 bg-primary-bg overflow-hidden">
       {/* Dynamic Background Grid Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
       <div className="absolute w-[600px] h-[600px] rounded-full glow-blur-blue opacity-10 top-1/3 left-0 -translate-x-1/2 pointer-events-none" />

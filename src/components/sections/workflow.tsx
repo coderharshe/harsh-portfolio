@@ -111,7 +111,7 @@ export default function Workflow() {
   };
 
   return (
-    <section id="workflow" className="relative py-28 overflow-hidden select-none">
+    <section id="workflow" className="relative py-28 overflow-hidden">
       <div className="absolute inset-0 bg-[#0A1020]" />
       <div className="absolute inset-0 bg-grid-pattern opacity-25 pointer-events-none" />
 

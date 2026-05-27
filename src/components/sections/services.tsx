@@ -108,7 +108,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="relative py-28 overflow-hidden select-none">
+    <section id="services" className="relative py-28 overflow-hidden">
       {/* Alternating section background */}
       <div className="absolute inset-0 bg-[#0A1020]" />
       <div className="absolute inset-0 bg-hex-pattern opacity-30 pointer-events-none" />
