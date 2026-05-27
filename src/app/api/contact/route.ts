@@ -36,7 +36,7 @@ export async function POST(request: Request) {
           <p style="font-size: 14px; margin-bottom: 10px;"><strong>Name:</strong> ${name}</p>
           <p style="font-size: 14px; margin-bottom: 10px;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #3b82f6; text-decoration: none;">${email}</a></p>
           <p style="font-size: 14px; margin-bottom: 10px;"><strong>Project Type:</strong> <span style="background-color: #dbeafe; color: #1e40af; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 12px;">${projectType}</span></p>
-          <p style="font-size: 14px; margin-bottom: 20px;"><strong>Target Budget:</strong> $${budgetRange.toLocaleString()} USD</p>
+          <p style="font-size: 14px; margin-bottom: 20px;"><strong>Target Budget:</strong> ₹${budgetRange.toLocaleString('en-IN')} INR</p>
           <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 15px;">
             <p style="margin-top: 0; font-weight: bold; color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Message Details:</p>
             <p style="white-space: pre-wrap; line-height: 1.6; margin-bottom: 0; font-size: 14px; color: #334155;">${message}</p>

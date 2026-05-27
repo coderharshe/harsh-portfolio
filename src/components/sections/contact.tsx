@@ -18,7 +18,7 @@ export default function Contact() {
     name: '',
     email: '',
     projectType: 'Business Platform',
-    budgetRange: 5000,
+    budgetRange: 50000,
     message: '',
   });
 
@@ -98,7 +98,7 @@ export default function Contact() {
           name: '',
           email: '',
           projectType: 'Business Platform',
-          budgetRange: 5000,
+          budgetRange: 50000,
           message: '',
         });
       } else {
@@ -261,24 +261,24 @@ export default function Contact() {
                 <div className="flex items-center justify-between w-full mb-2">
                   <label htmlFor="budgetRange" className="font-mono text-[9px] font-black tracking-widest text-[#94A3B8] uppercase">Target Project Budget</label>
                   <span className="font-mono text-[10px] font-bold text-accent-blue">
-                    ${formData.budgetRange.toLocaleString()} USD
+                    ₹{formData.budgetRange.toLocaleString('en-IN')} INR
                   </span>
                 </div>
                 <input
                   type="range"
                   id="budgetRange"
                   name="budgetRange"
-                  min="1000"
-                  max="25000"
-                  step="500"
+                  min="10000"
+                  max="1000000"
+                  step="5000"
                   value={formData.budgetRange}
                   onChange={handleChange}
                   className="w-full h-1 bg-white/5 rounded-full appearance-none cursor-pointer accent-accent-blue focus:outline-none"
                 />
                 <div className="flex justify-between w-full text-[8px] font-mono text-[#64748B] mt-1.5 select-none">
-                  <span>$1,000</span>
-                  <span>$12,500</span>
-                  <span>$25,000+</span>
+                  <span>₹10,000</span>
+                  <span>₹5,00,000</span>
+                  <span>₹10,00,000+</span>
                 </div>
               </div>
 

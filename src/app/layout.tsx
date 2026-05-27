@@ -99,7 +99,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="h-full select-none dark">
+    <html lang="en" className="h-full dark">
       <head>
         <script
           type="application/ld+json"

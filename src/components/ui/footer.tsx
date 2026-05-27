@@ -14,7 +14,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/5 bg-[#05080e] py-12 overflow-hidden select-none">
+    <footer className="relative border-t border-white/5 bg-[#05080e] py-12 overflow-hidden">
       {/* Decorative Glow Layer */}
       <div className="absolute w-[300px] h-[300px] rounded-full glow-blur-blue opacity-5 bottom-0 right-10 pointer-events-none" />
 
