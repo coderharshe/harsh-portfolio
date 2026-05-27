@@ -26,10 +26,12 @@ export default function Footer() {
             onClick={(e) => handleNavClick(e, 'home')}
             className="flex items-center gap-2.5 font-display font-black text-lg tracking-tight text-white group"
           >
-            <div className="h-7 w-7 rounded-md bg-gradient-to-br from-accent-blue to-accent-purple p-[1px]">
-              <div className="h-full w-full bg-[#05080e] rounded-[5px] flex items-center justify-center font-mono text-[10px] font-bold text-accent-blue group-hover:text-white transition-colors">
-                HA
-              </div>
+            <div className="h-7 w-7 rounded-md bg-gradient-to-br from-accent-blue to-accent-purple p-[1px] overflow-hidden">
+              <img
+                src="/logo.jpg"
+                alt="HA Logo"
+                className="h-full w-full object-cover rounded-[5px] transition-transform duration-300 group-hover:scale-110"
+              />
             </div>
             <span>
               Harsh<span className="text-accent-blue font-light">.dev</span>

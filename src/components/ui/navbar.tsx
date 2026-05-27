@@ -90,10 +90,12 @@ export default function Navbar() {
             onClick={(e) => handleClick(e, '#home')}
             className="flex items-center gap-2.5 font-display font-extrabold text-xl tracking-tight text-white group select-none"
           >
-            <div className="relative h-9 w-9 flex items-center justify-center rounded-lg bg-gradient-to-br from-accent-blue to-accent-purple p-[1px] shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
-              <div className="h-full w-full bg-primary-bg rounded-[7px] flex items-center justify-center font-mono text-sm font-bold text-accent-blue group-hover:text-white transition-colors">
-                HA
-              </div>
+            <div className="relative h-9 w-9 flex items-center justify-center rounded-lg bg-gradient-to-br from-accent-blue to-accent-purple p-[1px] shadow-[0_0_15px_rgba(59,130,246,0.3)] group-hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all overflow-hidden">
+              <img
+                src="/logo.jpg"
+                alt="HA Logo"
+                className="h-full w-full object-cover rounded-[7px] transition-transform duration-300 group-hover:scale-110"
+              />
             </div>
             <span className="bg-gradient-to-r from-white via-white to-text-secondary bg-clip-text text-transparent group-hover:text-white transition-colors">
               Harsh<span className="text-accent-blue font-light">.dev</span>
