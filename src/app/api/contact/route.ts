@@ -1,4 +1,8 @@
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+// Initialize Resend with the API key from environment variables
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -21,17 +25,36 @@ export async function POST(request: Request) {
       ) as Response;
     }
 
-    // Since this is a static-build friendly mock server that replicates live API behavior:
-    // We log the message to simulated server database logs
-    console.log('--- NEW PORTFOLIO CONTACT LEAD ---');
-    console.log(`From: ${name} (${email})`);
-    console.log(`Interest: ${projectType || 'General inquiry'}`);
-    console.log(`Budget Range: $${budgetRange?.[0] || 'Unspecified'} - $${budgetRange?.[1] || 'Unspecified'}`);
-    console.log(`Message: ${message}`);
-    console.log('----------------------------------');
+    // Send the email using Resend
+    const { data, error } = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>', // Resend's free tier sandbox domain
+      to: 'harshuthecoder@gmail.com', // User's email
+      subject: `💼 New Project Lead: ${projectType} from ${name}`,
+      html: `
+        <div style="font-family: sans-serif; padding: 20px; color: #1e293b; background-color: #f8fafc; border-radius: 10px; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0;">
+          <h2 style="color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 10px; margin-top: 0;">New Project Lead Received</h2>
+          <p style="font-size: 14px; margin-bottom: 10px;"><strong>Name:</strong> ${name}</p>
+          <p style="font-size: 14px; margin-bottom: 10px;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #3b82f6; text-decoration: none;">${email}</a></p>
+          <p style="font-size: 14px; margin-bottom: 10px;"><strong>Project Type:</strong> <span style="background-color: #dbeafe; color: #1e40af; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 12px;">${projectType}</span></p>
+          <p style="font-size: 14px; margin-bottom: 20px;"><strong>Target Budget:</strong> $${budgetRange.toLocaleString()} USD</p>
+          <div style="background-color: #ffffff; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 15px;">
+            <p style="margin-top: 0; font-weight: bold; color: #64748b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Message Details:</p>
+            <p style="white-space: pre-wrap; line-height: 1.6; margin-bottom: 0; font-size: 14px; color: #334155;">${message}</p>
+          </div>
+          <div style="margin-top: 20px; text-align: center; font-size: 10px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+            Sent securely via Harsh's Portfolio Live Lead Dispatcher
+          </div>
+        </div>
+      `,
+    });
 
-    // Simulate database write / network transmission latency
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    if (error) {
+      console.error('Resend Transmission Error:', error);
+      return NextResponse.json(
+        { error: error.message || 'Failed to dispatch email via Resend.' },
+        { status: 500 }
+      ) as Response;
+    }
 
     return NextResponse.json({
       success: true,
@@ -46,6 +69,7 @@ export async function POST(request: Request) {
     ) as Response;
   }
 }
+
 export async function OPTIONS() {
   return new Response(null, {
     status: 200,
@@ -56,4 +80,5 @@ export async function OPTIONS() {
     },
   });
 }
+
 export const dynamic = 'force-dynamic';
