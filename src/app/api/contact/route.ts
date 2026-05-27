@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     // Send the email using Resend
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>', // Resend's free tier sandbox domain
-      to: 'harshuthecoder@gmail.com', // User's email
+      to: 'harshaggarwal1502@gmail.com', // Verified Resend Sandbox recipient
       subject: `💼 New Project Lead: ${projectType} from ${name}`,
       html: `
         <div style="font-family: sans-serif; padding: 20px; color: #1e293b; background-color: #f8fafc; border-radius: 10px; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0;">
